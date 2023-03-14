@@ -1,4 +1,4 @@
-import { IoCart, IoPersonCircle } from "react-icons/io5";
+import { IoPersonCircle, IoCart } from "react-icons/io5";
 
 const Navbar = () => {
   return (
