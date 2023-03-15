@@ -1,11 +1,9 @@
-import Navbar from "./components/Navbar";
-import Product from "./components/Product";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Product />
+      <Layout />
     </>
   );
 }

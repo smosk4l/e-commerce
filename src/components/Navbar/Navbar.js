@@ -19,7 +19,7 @@ const Navbar = () => {
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex w-screen justify-between items-center px-6 py-4">
-          <p className="font-bold text-5xl font-jost">ALDO</p>
+          <p className="font-bold text-5xl font-jost">FOOTME</p>
 
           <div className="sm:hidden">
             <button onClick={handleClick} className="text-4xl">
@@ -32,7 +32,9 @@ const Navbar = () => {
           <ul
             className={`text-sm  bg-white
            mobile fixed
-          ${clicked ? "translate-x-0" : "translate-x-full"} ease-in duration-300
+          ${
+            clicked ? "translate-x-0" : "translate-x-full"
+          } easy-out duration-300
           sm:flex sm:flex-row sm:justify-end`}
           >
             <li>Overview</li>
