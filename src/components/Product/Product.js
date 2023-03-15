@@ -22,9 +22,12 @@ const Product = () => {
   ];
   return (
     <div className="max-w-[1440px] grid grid-cols-2">
-      {products.map((product) => {
+      {products.map((product, index) => {
         return (
-          <div className="font-mono border flex flex-col items-center gap-2 px-1 py-6 shadow-lg">
+          <div
+            key={index}
+            className=" border flex flex-col items-center gap-2 px-1 py-6 "
+          >
             <img src={product.image} alt="" className="mb-4" />
             <h1 className="text-lg font-bold">{product.title}</h1>
             <div className="flex gap-1 text-neutral-600 text-xs">
@@ -33,7 +36,7 @@ const Product = () => {
               <p>Black-Baltic-Iron Grey</p>
             </div>
             <p className="text-xl ">
-              zł <span>{product.price}</span>
+              <span>{product.price},- </span>
             </p>
           </div>
         );
