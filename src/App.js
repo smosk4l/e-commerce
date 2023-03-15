@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Product /> */}
+      <Product />
     </>
   );
 }

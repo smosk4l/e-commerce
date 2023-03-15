@@ -24,11 +24,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-screen ">
+      <div className="w-screen  relative">
         <ul
-          className={`text-sm 
-           mobile
-          ${clicked ? "flex" : "hidden"} 
+          className={`text-sm absolute bg-white
+           mobile 
+          ${clicked ? "translate-x-full" : "translate-x-0"} ease-in duration-300
           sm:flex sm:flex-row sm:justify-end`}
         >
           <li>Overview</li>
