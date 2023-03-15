@@ -1,14 +1,15 @@
 import Navbar from "../Navbar/Navbar";
-import ProductOption from "../Product/ProductOption";
-import FilterPanel from "../FilterPanel";
+import FilterPanel from "../Filter/FilterPanel";
 import Product from "../Product/Product";
+import FooterMobile from "../FooterMobile";
+
 function Layout() {
   return (
     <div>
       <Navbar />
-      {/* <ProductOption /> */}
       <FilterPanel />
       <Product />
+      <FooterMobile />
     </div>
   );
 }
