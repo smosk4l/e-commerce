@@ -5,10 +5,12 @@ import FooterMobile from "../FooterMobile";
 
 function Layout() {
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <FilterPanel />
-      <Product />
+      <div className=" max-w-[1440px] md:grid grid-cols-5">
+        <FilterPanel />
+        <Product />
+      </div>
       <FooterMobile />
     </div>
   );

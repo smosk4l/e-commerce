@@ -9,7 +9,7 @@ function FilterPanel() {
   };
   return (
     <>
-      <div className="px-6 py-4 ">
+      <div className="px-6 py-4 flex flex-col items-start w-screen">
         <p className="text-gray-600 mb-3">All Products</p>
         <button
           onClick={handleClick}
@@ -23,9 +23,11 @@ function FilterPanel() {
       </div>
 
       <div
-        className={`px-4 w-screen h-screen bg-white fixed  ${
+        className={`px-4  bg-white   ${
           clicked ? "translate-x-0" : "-translate-x-full"
-        } easy-out duration-300 rounded-md`}
+        } easy-out duration-300 rounded-md fixed w-screen md:row-start-2 md:w-auto md:${
+          clicked ? "translate-y-0" : "-translate-y-full"
+        } md:translate-x-0 md:border-r md:w-1/5`}
       >
         <div className="flex items-center justify-between mb-4 py-3">
           <span className="text-xl font-medium">Filters</span>
@@ -45,6 +47,7 @@ function FilterPanel() {
                   id="default"
                   value="default"
                   name="filterOption"
+                  checked
                 />
                 <label htmlFor="default">Default</label>
               </div>

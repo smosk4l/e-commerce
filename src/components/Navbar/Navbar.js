@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  IoReorderFourOutline,
-  IoCloseOutline,
-  IoCartOutline,
-} from "react-icons/io5";
+import { IoReorderFourOutline, IoCloseOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
@@ -15,11 +11,11 @@ const Navbar = () => {
   return (
     <nav
       className="overflow-hidden sticky top-0
-    bg-white z-50"
+    bg-white z-50 max-w-[1440px]"
     >
       <div className="flex items-end justify-center flex-col ">
-        <div className="flex w-screen justify-between items-center px-6 py-4">
-          <p className="font-bold text-5xl font-jost">FOOTME</p>
+        <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">
+          <p className="font-bold text-5xl font-jost ">FOOTME</p>
 
           <div className="sm:hidden">
             <button onClick={handleClick} className="text-4xl">

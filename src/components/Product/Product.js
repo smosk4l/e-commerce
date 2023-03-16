@@ -85,25 +85,29 @@ const Product = () => {
     },
   ];
   return (
-    <div className="max-w-[1440px] grid grid-cols-2">
-      {products.map((product, index) => {
-        return (
-          <div
-            key={index}
-            className=" border flex flex-col items-center justify-center gap-2 px-1 py-6 "
-          >
-            <img
-              src={product.image}
-              alt={product.image + "image"}
-              className="mb-4"
-            />
-            <h1 className="text-md font-medium text-center">{product.title}</h1>
-            <p className="text-xl item flex w-full justify-center items-end h-full">
-              <span>${product.price} </span>
-            </p>
-          </div>
-        );
-      })}
+    <div className="md:col-start-2 col-end-6">
+      <div className="max-w-[1440px] grid grid-cols-2 md:grid-cols-3 ">
+        {products.map((product, index) => {
+          return (
+            <div
+              key={index}
+              className=" border flex flex-col items-center justify-center gap-2 px-1 py-6 "
+            >
+              <img
+                src={product.image}
+                alt={product.image + "image"}
+                className="pb-8 w-[140px] h-[107px]"
+              />
+              <h1 className="text-md font-medium text-center">
+                {product.title}
+              </h1>
+              <p className="text-xl item flex w-full justify-center items-end h-full">
+                <span className="font-medium text-2xl">${product.price} </span>
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
