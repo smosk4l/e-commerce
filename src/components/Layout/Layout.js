@@ -7,7 +7,7 @@ function Layout() {
   return (
     <div>
       <Navbar />
-      <div className=" max-w-[1440px] md:grid grid-cols-5">
+      <div className=" max-w-[1440px] md:grid grid-cols-5 mx-auto">
         <FilterPanel />
         <ProductList />
       </div>

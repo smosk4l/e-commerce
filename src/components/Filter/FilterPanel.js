@@ -8,12 +8,13 @@ function FilterPanel() {
     setClicked(!clicked);
   };
   return (
-    <div className="col-start-1 col-end-2">
+    <div className="col-start-1 col-end-2 overflow-hidden">
       <div className="px-6 py-4 flex flex-col items-start ">
         <p className="text-gray-600 mb-3 ">All Products</p>
         <button
           onClick={handleClick}
           className="flex gap-2 items-center border-2  px-2 py-1 border-black"
+          aria-label="Show filters panel"
         >
           <span>
             <IoFunnelOutline />
@@ -24,17 +25,12 @@ function FilterPanel() {
 
       <div
         className={`px-4 bg-white animation-mobile ease-out duration-300 fixed w-full h-full z-50  md:animation-desktop
-                    ${clicked ? "translate-x-0" : "-translate-x-full"}  
+                    ${clicked ? "translate-x-0   " : "-translate-x-full "}  
                   `}
-
-        // className={`px-4  bg-white
-        // ${clicked ? "translate-x-0" : "-translate-x-full"}
-        // easy-out duration-300 rounded-md fixed
-        //  md:${clicked ? "translate-y-0" : "-translate-y-full"} md:border-r `}
       >
         <div className="flex items-center justify-between mb-4 py-3">
           <span className="text-xl font-medium">Filters</span>
-          <button onClick={handleClick}>
+          <button onClick={handleClick} aria-label="Close filter panel">
             <IoCloseOutline className="text-3xl" />
           </button>
         </div>
@@ -78,10 +74,22 @@ function FilterPanel() {
           <div className="pb-4 border-b">
             <p className="font-medium pb-2">Color</p>
             <div className="flex gap-4">
-              <button className="w-9 h-9 bg-red-400 rounded-full"></button>
-              <button className="w-9 h-9 bg-white rounded-full border"></button>
-              <button className="w-9 h-9 bg-blue-400 rounded-full"></button>
-              <button className="w-9 h-9 bg-black rounded-full"></button>
+              <button
+                className="w-9 h-9 bg-red-400 rounded-full"
+                aria-label="Red color circle"
+              ></button>
+              <button
+                className="w-9 h-9 bg-white rounded-full border"
+                aria-label="White color circle"
+              ></button>
+              <button
+                className="w-9 h-9 bg-blue-400 rounded-full"
+                aria-label="blue color circle"
+              ></button>
+              <button
+                className="w-9 h-9 bg-black rounded-full"
+                aria-label="black color circle"
+              ></button>
             </div>
           </div>
 

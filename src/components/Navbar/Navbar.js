@@ -18,7 +18,11 @@ const Navbar = () => {
           <p className="font-bold text-5xl font-jost ">FOOTME</p>
 
           <div className="sm:hidden">
-            <button onClick={handleClick} className="text-4xl">
+            <button
+              onClick={handleClick}
+              className="text-4xl"
+              aria-label={`${clicked ? "Close menu" : "Open menu"}`}
+            >
               {clicked ? <IoCloseOutline /> : <IoReorderFourOutline />}
             </button>
           </div>
