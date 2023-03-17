@@ -8,7 +8,7 @@ function FilterPanel() {
     setClicked(!clicked);
   };
   return (
-    <div className="col-start-1 col-end-2 overflow-hidden">
+    <div className="col-start-1 col-end-3 overflow-hidden">
       <div className="px-6 py-4 flex flex-col items-start ">
         <p className="text-gray-600 mb-3 ">All Products</p>
         <button
