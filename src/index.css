@@ -12,4 +12,12 @@ body {
   .mobile {
     @apply [&>*]:border-b [&>*]:w-screen flex-col items-center justify-center [&>*]:px-6 [&>*]:py-3 [&>*]:border-gray-200;
   }
+
+  .animation-mobile {
+    @apply translate-y-0;
+  }
+
+  .animation-desktop {
+    @apply static;
+  }
 }

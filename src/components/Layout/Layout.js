@@ -1,15 +1,15 @@
 import Navbar from "../Navbar/Navbar";
 import FilterPanel from "../Filter/FilterPanel";
-import Product from "../Product/Product";
+import ProductList from "../Product/ProductList";
 import FooterMobile from "../FooterMobile";
 
 function Layout() {
   return (
-    <div className="">
+    <div>
       <Navbar />
       <div className=" max-w-[1440px] md:grid grid-cols-5">
         <FilterPanel />
-        <Product />
+        <ProductList />
       </div>
       <FooterMobile />
     </div>
