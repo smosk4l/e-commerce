@@ -4,21 +4,16 @@ import { useState } from "react";
 import { IoFunnelOutline, IoCloseOutline } from "react-icons/io5";
 const Product = () => {
   const [clicked, setClicked] = useState(false);
-
   const handleClick = () => {
     setClicked(!clicked);
   };
 
-  const sortProdutcsDesc = (products) => {
+  const sortProdutcs = (products, desc) => {
     products.sort((a, b) => {
-      return a.price - b.price;
+      return desc ? b.price - a.price : a.price - b.price;
     });
   };
-  // console.log(
-  //   products.sort((a, b) => {
-  //     return b.price - a.price;
-  //   })
-  // );
+
   return (
     <div className=" max-w-[1440px] md:grid grid-cols-8 mx-auto">
       <div className="col-start-1 col-end-3 overflow-hidden">
@@ -69,6 +64,7 @@ const Product = () => {
                     id="priceDesc"
                     value="priceDesc"
                     name="filterOption"
+                    onClick={() => sortProdutcs(products, true)}
                   />
                   <label htmlFor="priceDesc">Price: High - Low</label>
                 </div>
@@ -78,6 +74,7 @@ const Product = () => {
                     id="priceAsc"
                     value="priceAsc"
                     name="filterOption"
+                    onClick={() => sortProdutcs(products, false)}
                   />
                   <label htmlFor="priceAsc">Price: Low - High</label>
                 </div>
