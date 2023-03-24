@@ -1,19 +1,25 @@
 import ProductCard from "./ProductCard";
-import products from "./ProductsData";
+import Data from "./ProductsData";
 import { useState } from "react";
 import { IoFunnelOutline, IoCloseOutline } from "react-icons/io5";
 const Product = () => {
   const [clicked, setClicked] = useState(false);
+  const [products, setProducts] = useState(Data);
+
   const handleClick = () => {
     setClicked(!clicked);
   };
 
+  const showDeafultProducts = () => {
+    setProducts(Data);
+  };
   const sortProdutcs = (products, desc) => {
-    products.sort((a, b) => {
+    const filteredProducts = [...products].sort((a, b) => {
       return desc ? b.price - a.price : a.price - b.price;
     });
-  };
 
+    setProducts(filteredProducts);
+  };
   return (
     <div className=" max-w-[1440px] md:grid grid-cols-8 mx-auto">
       <div className="col-start-1 col-end-3 overflow-hidden">
@@ -55,6 +61,7 @@ const Product = () => {
                     value="default"
                     name="filterOption"
                     defaultChecked
+                    onClick={showDeafultProducts}
                   />
                   <label htmlFor="default">Default</label>
                 </div>

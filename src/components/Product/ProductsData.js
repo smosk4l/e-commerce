@@ -1,4 +1,4 @@
-const products = [
+const Data = [
   {
     title: "Jordan 3 Retro White Cement Reimagined",
     image: "https://t.ly/npFwL",
@@ -82,4 +82,4 @@ const products = [
   },
 ];
 
-export default products;
+export default Data;
