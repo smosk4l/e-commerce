@@ -4,10 +4,12 @@ import FooterMobile from "../Footer/FooterMobile";
 
 function Layout() {
   return (
-    <div>
-      <Navbar />
-      <ProductList />
-      <FooterMobile />
+    <div className="w-screen flex justify-center">
+      <div className="max-w-[1440px]">
+        <Navbar />
+        <ProductList />
+        <FooterMobile />
+      </div>
     </div>
   );
 }

@@ -63,7 +63,7 @@ const Product = () => {
                     defaultChecked
                     onClick={showDeafultProducts}
                   />
-                  <label htmlFor="default">Default</label>
+                  <label htmlFor="default">Latest</label>
                 </div>
                 <div className="[&>*]:mr-4">
                   <input
