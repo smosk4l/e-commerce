@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav
       className="overflow-hidden sticky top-0
-    bg-white z-50 max-w-[1440px]"
+    bg-white z-50 "
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">

@@ -1,15 +1,17 @@
 function ProductCard({ product }) {
   return (
-    <div className=" border flex flex-col items-center justify-center gap-2 px-1 py-6 ">
+    <div className=" font-rubik shadow-2xl flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden hover:scale-105 ease-in-out duration-300 mb-6 ">
       <img
         src={product.image}
         alt={product.image + "image"}
-        className="pb-8 w-[140px] h-[107px]"
+        className="my-12 w-[140px] h-[107px]  "
       />
-      <h1 className="text-md font-medium text-center">{product.title}</h1>
-      <p className="text-xl item flex w-full justify-center items-end h-full">
-        <span className="font-medium text-2xl">${product.price} </span>
-      </p>
+      <div className="bg-[#2f333a] text-white w-full h-full px-4 py-6 flex flex-col justify-around">
+        <h1 className="text-[14px]  font-medium uppercase ">{product.title}</h1>
+        <p className="text-xl item flex  justify-start items-end ">
+          <span className="font-medium text-base">${product.price} </span>
+        </p>
+      </div>
     </div>
   );
 }

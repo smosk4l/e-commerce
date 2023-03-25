@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         jost: "'Jost', sans-serif;",
+        rubik: "'Rubik'",
       },
     },
   },
