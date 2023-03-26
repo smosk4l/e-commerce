@@ -63,7 +63,7 @@ const Product = () => {
                     defaultChecked
                     onClick={showDeafultProducts}
                   />
-                  <label htmlFor="default">Latest</label>
+                  <label htmlFor="default">Most Recent</label>
                 </div>
                 <div className="[&>*]:mr-4">
                   <input
@@ -73,7 +73,7 @@ const Product = () => {
                     name="filterOption"
                     onClick={() => sortProdutcs(products, true)}
                   />
-                  <label htmlFor="priceDesc">Price: High - Low</label>
+                  <label htmlFor="priceDesc">Price High</label>
                 </div>
                 <div className="[&>*]:mr-4">
                   <input
@@ -83,7 +83,7 @@ const Product = () => {
                     name="filterOption"
                     onClick={() => sortProdutcs(products, false)}
                   />
-                  <label htmlFor="priceAsc">Price: Low - High</label>
+                  <label htmlFor="priceAsc">Price Low</label>
                 </div>
               </form>
             </div>

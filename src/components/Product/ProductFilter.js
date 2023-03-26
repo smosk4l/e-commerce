@@ -43,7 +43,7 @@ function ProductFilter() {
                 name="filterOption"
                 // onClick={() => setProducts(sortProdutcs(products, true))}
               />
-              <label htmlFor="priceDesc">Price: High - Low</label>
+              <label htmlFor="priceDesc">Price High</label>
             </div>
             <div className="[&>*]:mr-4">
               <input
@@ -53,7 +53,7 @@ function ProductFilter() {
                 name="filterOption"
                 // onClick={() => sortProdutcs(products, false)}
               />
-              <label htmlFor="priceAsc">Price: Low - High</label>
+              <label htmlFor="priceAsc">Price Low</label>
             </div>
           </form>
         </div>
