@@ -7,6 +7,9 @@ module.exports = {
         jost: "'Jost', sans-serif;",
         rubik: "'Rubik'",
       },
+      colors: {
+        "black-400": "#2f333a",
+      },
     },
   },
   plugins: [],

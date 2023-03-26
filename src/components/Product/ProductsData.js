@@ -1,3 +1,7 @@
+const getUniqueID = () => {
+  return ("" + Math.random()).slice(2);
+};
+
 const Data = [
   {
     title: "Jordan 3 Retro White Cement Reimagined",
@@ -102,5 +106,9 @@ const Data = [
     discount: 15,
   },
 ];
+
+Data.map((product) => {
+  return (product.id = getUniqueID());
+});
 
 export default Data;

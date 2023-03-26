@@ -15,7 +15,7 @@ const Navbar = () => {
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">
-          <p className="font-bold text-5xl font-jost ">FOOTME</p>
+          <p className="font-bold text-5xl font-jost text-black-400 ">FOOTME</p>
 
           <div className="sm:hidden">
             <button

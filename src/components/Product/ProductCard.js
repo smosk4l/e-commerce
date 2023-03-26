@@ -1,3 +1,5 @@
+import { IoHeartOutline } from "react-icons/io5";
+
 function ProductCard({ product }) {
   const calcPriceAfterDiscount = () => {
     if (product.discount) {
@@ -7,24 +9,25 @@ function ProductCard({ product }) {
     }
   };
   return (
-    <div className=" font-rubik shadow-2xl flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden hover:scale-105 ease-in-out duration-300 mb-6 ">
+    <div className=" font-rubik shadow-2xl flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden ease-in-out duration-300 mb-6 mr-2 z-10 hover:scale-105 ">
       <img
         src={product.image}
         alt={product.image + "image"}
-        className="my-12 w-[140px] h-[107px]  "
+        className="my-12 w-[140px] h-[107px]"
       />
-      <div className="bg-[#2f333a] text-white w-full h-full px-4 py-6 flex flex-col justify-around">
-        <h1 className="text-[14px]  font-medium uppercase ">{product.title}</h1>
-        <p className="text-xl item flex  justify-start items-center ">
+
+      <div className="bg-black-400 text-white w-full h-full px-4 py-6 flex flex-col justify-around font-medium">
+        <h1 className="text-[14px]   uppercase ">{product.title}</h1>
+        <p className="text-lg item flex  justify-start items-center  ">
           <span
-            className={`font-medium text-red-400 text-lg mr-4 ${
+            className={` text-red-400 text-lg mr-4 ${
               product.discount ? "inline" : "hidden"
             }`}
           >
             {calcPriceAfterDiscount()}
           </span>
           <span
-            className={`font-medium text-base decoration-gray-700 decoration-2  ${
+            className={`decoration-gray-700 decoration-2  ${
               product.discount ? "line-through" : ""
             }`}
           >
