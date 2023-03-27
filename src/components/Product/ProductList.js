@@ -2,6 +2,7 @@ import ProductCard from "./ProductCard";
 import Data from "./ProductsData";
 import { useState } from "react";
 import { IoFunnelOutline, IoCloseOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const Product = () => {
   const [clicked, setClicked] = useState(false);
   const [products, setProducts] = useState(Data);
@@ -118,8 +119,19 @@ const Product = () => {
       </div>
       <div className="md:col-start-3 col-end-9">
         <div className="max-w-[1440px] grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3 ">
-          {products.map((product, index) => {
-            return <ProductCard product={product} key={index} />;
+          {products.map((product) => {
+            return (
+              <div>
+                <Link
+                  to={`/products${product.id}`}
+                  className="inline-grid h-full"
+                >
+                  <ProductCard product={product} key={product.id} />
+                </Link>
+              </div>
+            );
+            // <ProductCard product={product} key={product.id} />;
+            // <ProductCard product={product} key={product.id} />{" "}
           })}
         </div>
       </div>

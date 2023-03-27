@@ -1,5 +1,4 @@
 import { IoHeartOutline } from "react-icons/io5";
-
 function ProductCard({ product }) {
   const calcPriceAfterDiscount = () => {
     if (product.discount) {
@@ -13,7 +12,7 @@ function ProductCard({ product }) {
       <img
         src={product.image}
         alt={product.image + "image"}
-        className="my-12 w-[140px] h-[107px]"
+        className="my-12 w-[140px] h-[75px]"
       />
 
       <div className="bg-black-400 text-white w-full h-full px-4 py-6 flex flex-col justify-around font-medium">
