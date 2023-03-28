@@ -16,6 +16,9 @@ const Product = () => {
   };
   const sortProdutcs = (products, desc) => {
     const filteredProducts = [...products].sort((a, b) => {
+      if (a.discount) {
+        const priceAfterDiscountA = a;
+      }
       return desc ? b.price - a.price : a.price - b.price;
     });
 
@@ -123,8 +126,8 @@ const Product = () => {
             return (
               <div>
                 <Link
-                  to={`/products${product.id}`}
-                  className="inline-grid h-full"
+                  to={`/products/${product.id}`}
+                  className="inline-grid h-full w-full"
                 >
                   <ProductCard product={product} key={product.id} />
                 </Link>
