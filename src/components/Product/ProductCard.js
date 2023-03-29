@@ -1,4 +1,3 @@
-import { IoHeartOutline } from "react-icons/io5";
 function ProductCard({ product }) {
   const calcPriceAfterDiscount = () => {
     if (product.discount) {
