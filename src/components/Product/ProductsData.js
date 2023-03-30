@@ -1,5 +1,6 @@
+let counter = 1;
 const getUniqueID = () => {
-  return ("" + Math.random()).slice(2);
+  return (counter += 1);
 };
 
 const Data = [

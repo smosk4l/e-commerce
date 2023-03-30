@@ -13,7 +13,7 @@ function Layout() {
   return (
     <div className="w-screen flex justify-center">
       <div className="max-w-[1440px] shadow-lg">
-        <Navbar className={"bg-red-400"} />
+        <Navbar />
         <div className="md:grid grid-cols-8 mx-auto">
           <ProductFilter onFilter={handleFilter} />
           <ProductList products={products} />
