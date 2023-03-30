@@ -31,7 +31,6 @@ function ProductDetails() {
     setIsFavorite(!isFavorite);
   };
   const product = getSelectedProduct();
-  console.log(product);
   return (
     <article className="max-w-[1440px] font-rubik h-screen">
       <Navbar></Navbar>

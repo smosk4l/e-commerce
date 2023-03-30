@@ -1,7 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import ProductList from "../Product/ProductList";
 import ProductFilter from "../Product/ProductFilter";
-import FooterMobile from "../Footer/FooterMobile";
 import ProductsData from "../Product/ProductsData";
 import { useState } from "react";
 function Layout() {
@@ -18,7 +17,6 @@ function Layout() {
           <ProductFilter onFilter={handleFilter} />
           <ProductList products={products} />
         </div>
-        <FooterMobile />
       </div>
     </div>
   );
