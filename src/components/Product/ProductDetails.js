@@ -39,7 +39,7 @@ function ProductDetails() {
       <Navbar></Navbar>
       <div className="w-screen md:grid md:grid-cols-6">
         <img
-          src="https://sneakersjoint.com/wp-content/uploads/2023/03/air-jordan-3-retro-white-cement-reimagined-sneakers-1-1260x1260.webp"
+          src={product.images.pictures[0]}
           alt=""
           className="relative px-4 mx-auto max-h-96 col-start-1 col-end-3"
         />

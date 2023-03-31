@@ -1,4 +1,5 @@
 function ProductCard({ product }) {
+  console.log(product.images.cover);
   const calcPriceAfterDiscount = () => {
     if (product.discount) {
       return (
@@ -9,8 +10,8 @@ function ProductCard({ product }) {
   return (
     <div className=" font-rubik shadow-2xl flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden ease-in-out duration-300 mb-6 mr-2 z-10 hover:scale-105 ">
       <img
-        src={product.image}
-        alt={product.image + "image"}
+        src={product.images.cover}
+        alt={product.images.cover + "image"}
         className="my-12 w-[140px] h-[75px]"
       />
 
