@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="w-screen  relative">
           <ul
             className={`text-sm  bg-white
-           mobile fixed
+           mobile fixed h-full
           ${
             clicked ? "translate-x-0" : "translate-x-full"
           } easy-out duration-300
