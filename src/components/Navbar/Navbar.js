@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoReorderFourOutline, IoCloseOutline } from "react-icons/io5";
-
+import { Link } from "react-router-dom";
+import Layout from "../Layout/Layout";
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
 
@@ -15,7 +16,9 @@ const Navbar = () => {
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">
-          <p className="font-bold text-5xl font-jost text-black-400 ">FOOTME</p>
+          <Link to="/" className="font-bold text-5xl font-jost text-black-400 ">
+            FOOTME
+          </Link>
 
           <div className="sm:hidden">
             <button

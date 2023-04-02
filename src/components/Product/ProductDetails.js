@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Data from "./ProductsData";
+import ProductGallery from "../ProductGallery";
 import {
   IoHeartOutline,
   IoCart,
@@ -39,11 +40,12 @@ function ProductDetails() {
       <article className="max-w-[1440px] font-rubik h-screen">
         <Navbar></Navbar>
         <div className="w-screen md:grid md:grid-cols-6">
-          <img
+          <ProductGallery product={product} />
+          {/* <img
             src={product.images.pictures[0]}
             alt=""
             className="relative px-4 mx-auto max-h-96 col-start-1 col-end-3"
-          />
+          /> */}
           <button
             className="text-3xl absolute top-28 left-4"
             onClick={() => navigate(-1)}
