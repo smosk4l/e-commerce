@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav
       className="overflow-hidden sticky top-0
-    bg-white z-50 "
+    bg-white z-40 "
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">
@@ -27,22 +27,23 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="w-screen  relative">
-        <ul
-          className={`text-sm  bg-white
-           mobile fixed h-full
+
+        <div className="w-screen  relative">
+          <ul
+            className={`text-sm  bg-white
+           mobile fixed h-full  z-50
           ${
             clicked ? "translate-x-0" : "translate-x-full"
           } easy-out duration-300
           sm:flex sm:flex-row sm:justify-end`}
-        >
-          <li>Overview</li>
-          <li>Profile</li>
-          <li>My Preferences</li>
-          <li>Address Book</li>
-          <li>Saved Cards</li>
-        </ul>
+          >
+            <li>Overview</li>
+            <li>Profile</li>
+            <li>My Preferences</li>
+            <li>Address Book</li>
+            <li>Saved Cards</li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
