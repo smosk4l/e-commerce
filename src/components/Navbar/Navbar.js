@@ -27,23 +27,22 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
-        <div className="w-screen  relative">
-          <ul
-            className={`text-sm  bg-white
-           mobile fixed h-full top-0
+      </div>
+      <div className="w-screen  relative">
+        <ul
+          className={`text-sm  bg-white
+           mobile fixed h-full
           ${
             clicked ? "translate-x-0" : "translate-x-full"
           } easy-out duration-300
           sm:flex sm:flex-row sm:justify-end`}
-          >
-            <li>Overview</li>
-            <li>Profile</li>
-            <li>My Preferences</li>
-            <li>Address Book</li>
-            <li>Saved Cards</li>
-          </ul>
-        </div>
+        >
+          <li>Overview</li>
+          <li>Profile</li>
+          <li>My Preferences</li>
+          <li>Address Book</li>
+          <li>Saved Cards</li>
+        </ul>
       </div>
     </nav>
   );
