@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoReorderFourOutline, IoCloseOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import Layout from "../Layout/Layout";
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
 

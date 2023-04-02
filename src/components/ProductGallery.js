@@ -9,12 +9,14 @@ function ProductGallery(props) {
         original={props.product.images.pictures[0]}
         width="1260"
         height="1260"
+        alt={`${props.product.title}`}
       >
         {({ ref, open }) => (
           <img
             ref={ref}
             onClick={open}
             src={props.product.images.pictures[0]}
+            alt={`${props.product.title}`}
           />
         )}
       </Item>
