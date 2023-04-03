@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Data from "./ProductsData";
-import ProductGallery from "../ProductGallery";
+import ProductGallery from "./ProductGallery";
 import {
   IoHeartOutline,
   IoCart,
@@ -37,24 +37,21 @@ function ProductDetails() {
   const product = getSelectedProduct();
   return (
     <div className="w-screen flex justify-center">
-      <article className="max-w-[1440px] font-rubik h-screen">
+      <div className="max-w-[1440px] font-rubik h-screen">
         <Navbar></Navbar>
-        <div className="w-screen md:grid md:grid-cols-6">
-          <ProductGallery product={product} />
-          {/* <img
-            src={product.images.pictures[0]}
-            alt=""
-            className="relative px-4 mx-auto max-h-96 col-start-1 col-end-3"
-          /> */}
+        <article className="md:grid md:grid-cols-6 gap-6 relative">
+          <div className=" col-start-1 col-end-4 px-3 lg:px-6">
+            <ProductGallery product={product} />
+          </div>
           <button
-            className="text-3xl absolute top-28 left-4"
+            className="text-3xl absolute top-12 left-8"
             onClick={() => navigate(-1)}
           >
             <IoArrowBackOutline />
           </button>
-          <div>
+          <div className="flex flex-col  justify-center col-start-4 col-end-7">
             <button
-              className="text-3xl absolute top-28 right-4 animate-bounce"
+              className="text-3xl absolute top-12 right-8 animate-bounce"
               onClick={heartClickHandler}
             >
               {isFavorite ? (
@@ -63,8 +60,10 @@ function ProductDetails() {
                 <IoHeartOutline />
               )}
             </button>
-            <div className="flex flex-col gap-3 px-4">
-              <h1 className="font-semibold text-2xl">{product.title}</h1>
+            <div className="flex flex-col gap-3 px-4 ">
+              <h1 className="font-semibold text-2xl max-w-[25ch]">
+                {product.title}
+              </h1>
               <span className="text-md font-medium">Description</span>
               <p className="text-slate-700 text-sm">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
@@ -121,8 +120,8 @@ function ProductDetails() {
               </button>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

@@ -41,7 +41,7 @@ function ProductFilter(props) {
       </div>
       <div>
         <div
-          className={`px-4 bg-white animation-mobile ease-out duration-300 fixed top-0 w-screen h-screen z-50  md:animation-desktop
+          className={`px-4 bg-white animation-mobile ease-out duration-300 fixed top-0 h-screen z-50  md:animation-desktop
                 ${clicked ? "translate-x-0   " : "-translate-x-full "}  
               `}
         >
@@ -91,7 +91,7 @@ function ProductFilter(props) {
               </form>
             </div>
 
-            <div className="pb-4 border-b">
+            <div className="pb-4 border-b ">
               <p className="font-medium pb-2">Color</p>
               <div className="flex gap-4">
                 <button

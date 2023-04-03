@@ -12,8 +12,8 @@ function Layout() {
   return (
     <div className="w-screen flex justify-center">
       <div className="max-w-[1440px] shadow-lg">
-        <Navbar />
-        <div className="md:grid grid-cols-8 mx-auto">
+        <Navbar color="bg-blue-500" />
+        <div className="md:grid grid-cols-8 mx-auto overflow-hidden">
           <ProductFilter onFilter={handleFilter} />
           <ProductList products={products} />
         </div>

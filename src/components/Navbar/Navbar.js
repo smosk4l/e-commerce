@@ -15,8 +15,10 @@ const Navbar = () => {
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-screen justify-between items-center px-6 py-4">
-          <Link to="/" className="font-bold text-5xl font-jost text-black-400 ">
-            FOOTME
+          <Link to="/">
+            <p className="font-bold text-5xl font-jost text-black-400 ">
+              FOOTME
+            </p>
           </Link>
 
           <div className="sm:hidden">
