@@ -2,11 +2,9 @@ import { useContext } from "react";
 import HomeButton from "../HomeButton";
 import Navbar from "../Navbar/Navbar";
 import ProductList from "../Product/ProductList";
-import { Link } from "react-router-dom";
 import { FavoritesContext } from "../FavoritesContext";
 function Wishlist() {
-  const [favorites, setFavorites] = useContext(FavoritesContext);
-  console.log(favorites);
+  const [favorites] = useContext(FavoritesContext);
 
   return (
     <div className="w-screen flex justify-center items-center">
