@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav
       className="overflow-hidden sticky top-0
-    bg-white z-40 "
+    bg-white z-40 shadow-md "
     >
       <div className="flex items-end justify-center flex-col ">
         <div className="flex mr-auto w-full justify-between items-center px-6 py-4">

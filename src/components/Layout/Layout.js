@@ -5,7 +5,6 @@ import ProductsData from "../Product/ProductsData";
 import { useState } from "react";
 function Layout() {
   const [products, setProducts] = useState(ProductsData);
-
   const handleFilter = (filteredProducts) => {
     setProducts(filteredProducts);
   };

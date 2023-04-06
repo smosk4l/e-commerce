@@ -16,7 +16,6 @@ function ProductDetails() {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
-
   const navigate = useNavigate();
 
   const getSelectedProduct = () => {
@@ -34,6 +33,7 @@ function ProductDetails() {
   const heartClickHandler = () => {
     setIsFavorite(!isFavorite);
   };
+
   const product = getSelectedProduct();
   return (
     <div className="w-screen flex justify-center">
