@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { FavoritesContext } from "../FavoritesContext";
 import Navbar from "../Navbar/Navbar";
 import Data from "./ProductsData";
 import ProductGallery from "./ProductGallery";
@@ -16,11 +17,13 @@ function ProductDetails() {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [favorites, setFavorites] = useContext(FavoritesContext);
   const navigate = useNavigate();
 
   const getSelectedProduct = () => {
     return Data.find((product) => product.id.toString() === id);
   };
+  const product = getSelectedProduct();
 
   const addQuantity = () => {
     setQuantity((quantity) => quantity + 1);
@@ -32,9 +35,18 @@ function ProductDetails() {
 
   const heartClickHandler = () => {
     setIsFavorite(!isFavorite);
+    if (!isFavorite) {
+      setFavorites((prevFavorites) => [...prevFavorites, product]);
+    } else {
+      setFavorites((prevFavorites) =>
+        prevFavorites.filter((fav) => fav.id !== product.id)
+      );
+    }
   };
 
-  const product = getSelectedProduct();
+  const checkIfIsFavorite = () => {
+    return favorites.includes(product);
+  };
   return (
     <div className="w-screen flex justify-center">
       <div className="max-w-[1440px] font-rubik h-screen">
@@ -54,7 +66,7 @@ function ProductDetails() {
               className="text-3xl absolute top-12 right-8 animate-bounce"
               onClick={heartClickHandler}
             >
-              {isFavorite ? (
+              {isFavorite || checkIfIsFavorite() ? (
                 <IoHeartSharp className="text-red-500" />
               ) : (
                 <IoHeartOutline />
