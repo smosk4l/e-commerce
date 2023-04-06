@@ -1,5 +1,4 @@
 function ProductCard({ product }) {
-  console.log(product.images.cover);
   const calcPriceAfterDiscount = () => {
     if (product.discount) {
       return (
