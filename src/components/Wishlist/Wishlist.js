@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import HomeButton from "../HomeButton";
 import Navbar from "../Navbar/Navbar";
 import ProductList from "../Product/ProductList";
 import { Link } from "react-router-dom";
@@ -21,12 +22,8 @@ function Wishlist() {
               Your Wishlist is empty!
             </h1>
             <p>seems like you don't have wishes here.</p>
-            <p>Make a wish!</p>
-            <Link to={`/`}>
-              <button className="uppercase text-sm text-white bg-blue-700 hover:bg-blue-600 rounded-full px-5 py-3 mt-4">
-                Start shopping!
-              </button>
-            </Link>
+            <p className="mb-4">Make a wish!</p>
+            <HomeButton text={"Start shopping!"} />
           </div>
         )}
       </div>
