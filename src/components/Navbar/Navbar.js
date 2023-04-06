@@ -30,10 +30,15 @@ const Navbar = () => {
           </Link>
           <div className="hidden w-full sm:inline-block">
             <ul className="flex justify-end gap-6 text-xl">
-              <li>Products</li>
-              <li>My Account</li>
-              <li>Wishlist</li>
-              <li>Basket</li>
+              <Link to="/account">
+                <li>My Account</li>
+              </Link>
+              <Link to="/wishlist">
+                <li>Wishlist</li>
+              </Link>
+              <Link to="/basket">
+                <li>Basket</li>
+              </Link>
             </ul>
           </div>
           <div className="sm:hidden">

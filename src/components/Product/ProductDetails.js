@@ -30,7 +30,8 @@ function ProductDetails() {
   };
 
   const removeQuantity = () => {
-    if (quantity > 1) setQuantity((quantity) => quantity - 1);
+    if (quantity <= 1) return;
+    setQuantity((quantity) => quantity - 1);
   };
 
   const heartClickHandler = () => {
