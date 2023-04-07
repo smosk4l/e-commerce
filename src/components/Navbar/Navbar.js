@@ -2,11 +2,9 @@ import { useState } from "react";
 import {
   IoReorderFourOutline,
   IoCloseOutline,
-  IoPersonCircle,
-  IoHomeOutline,
+  IoPersonCircleOutline,
   IoHeartOutline,
   IoBasketOutline,
-  IoCartOutline,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
 const Navbar = () => {
@@ -61,26 +59,24 @@ const Navbar = () => {
           } easy-out duration-300
           sm:flex sm:flex-row sm:justify-end`}
           >
-            <li className="flex items-center gap-2">
-              <IoCartOutline className="text-2xl" />
-              Products
+            <li>
+              <Link to={"/login"} className="flex items-center gap-2">
+                <IoPersonCircleOutline className="text-2xl" />
+                My account
+              </Link>
             </li>
             <li className="flex items-center gap-2">
-              <IoHomeOutline className="text-2xl" />
-              Home
-            </li>
-            <li className="flex items-center gap-2">
-              <IoPersonCircle className="text-2xl" />
-              My account
-            </li>
-            <li className="flex items-center gap-2">
-              <IoHeartOutline className="text-2xl" />
-              Wishlist
+              <Link to={"/wishlist"} className="flex items-center gap-2">
+                <IoHeartOutline className="text-2xl" />
+                Wishlist
+              </Link>
             </li>
 
             <li className="flex items-center gap-2">
-              <IoBasketOutline className="text-2xl" />
-              Basket
+              <Link to={"/basket"} className="flex items-center gap-2">
+                <IoBasketOutline className="text-2xl" />
+                Basket
+              </Link>
             </li>
           </ul>
         </div>
