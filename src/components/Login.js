@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { IoArrowBackOutline } from "react-icons/io5";
+import formSubmitValidation from "../utils/formSubmitValidation";
 
 function Login() {
   return (
@@ -18,7 +20,11 @@ function Login() {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
-          <form className="mb-0 space-y-6">
+          <form
+            className="mb-0 space-y-6"
+            method="POST"
+            onSubmit={formSubmitValidation}
+          >
             <div>
               <label
                 htmlFor="email"
