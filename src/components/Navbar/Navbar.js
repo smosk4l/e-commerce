@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
           <div className="hidden w-full sm:inline-block">
             <ul className="flex justify-end gap-6 text-xl">
-              <Link to="/account">
+              <Link to="/login">
                 <li>My Account</li>
               </Link>
               <Link to="/wishlist">

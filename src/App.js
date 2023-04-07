@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Error from "./components/Error";
 import Layout from "./components/Layout/Layout";
 import Wishlist from "./components/Wishlist/Wishlist";
+import Register from "./components/Register";
 import Login from "./components/Login";
 import ProductDetails from "./components/Product/ProductDetails";
 function App() {
@@ -11,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/account" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Error />} />
         <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
