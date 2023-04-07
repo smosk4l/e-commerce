@@ -7,7 +7,7 @@ function ProductCard({ product }) {
     }
   };
   return (
-    <div className=" font-rubik shadow-2xl flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden ease-in-out duration-300 mb-6 mr-2 z-10 hover:scale-105 ">
+    <div className=" font-rubik shadow-md flex flex-col items-center justify-center gap-2  rounded-lg overflow-hidden ease-in-out duration-300 mb-6 mr-2 z-10 hover:scale-105 ">
       <img
         src={product.images.cover}
         alt={product.images.cover + "image"}
