@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FavoritesContext } from "../FavoritesContext";
+import { FavoritesContext } from "../../contex/FavoritesContext";
 import Navbar from "../Navbar/Navbar";
 import Data from "./ProductsData";
 import ProductGallery from "./ProductGallery";
