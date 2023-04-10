@@ -21,29 +21,21 @@ function ProductDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const favoritesFromStorage = JSON.parse(localStorage.getItem("favorites"));
-    if (favoritesFromStorage) {
-      setFavorites(favoritesFromStorage);
-    }
+    const favoritesFromStorage =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(favoritesFromStorage);
   }, [setFavorites]);
-  console.log(localStorage.favorites);
-  const getSelectedProduct = () => {
-    return Data.find((product) => product.id.toString() === id);
-  };
-  const product = getSelectedProduct();
 
-  const addQuantity = () => {
-    setQuantity((quantity) => quantity + 1);
-  };
+  const product = Data.find((product) => product.id.toString() === id);
 
-  const removeQuantity = () => {
+  const toggleFavorite = () => setIsFavorite(!isFavorite);
+  const incrementQuantity = () => setQuantity((quantity) => quantity + 1);
+  const decrementQuantity = () => {
     if (quantity <= 1) return;
     setQuantity((quantity) => quantity - 1);
   };
 
-  const heartClickHandler = () => {
-    setIsFavorite(!isFavorite);
-
+  const updateFavorites = () => {
     const favoritesFromStorage = JSON.parse(localStorage.getItem("favorites"));
 
     if (
@@ -67,9 +59,13 @@ function ProductDetails() {
       );
     }
   };
+  const heartClickHandler = () => {
+    toggleFavorite();
+    updateFavorites();
+  };
 
   const checkIfIsFavorite = () => {
-    return favorites.includes(product);
+    return favorites.some((fav) => fav.id === product.id);
   };
   return (
     <div className="w-screen flex justify-center">
@@ -90,7 +86,7 @@ function ProductDetails() {
               className="text-3xl absolute top-12 right-8 animate-bounce"
               onClick={heartClickHandler}
             >
-              {isFavorite || checkIfIsFavorite() ? (
+              {checkIfIsFavorite() ? (
                 <IoHeartSharp className="text-red-500" />
               ) : (
                 <IoHeartOutline />
@@ -131,11 +127,11 @@ function ProductDetails() {
                 <div className="flex items-center gap-4 text-md font-medium pb-4 row-start-2 col-start-0 ">
                   <span>Quantity</span>
                   <div className="flex items-center gap-3 text-lg border px-6 py-2 rounded-full">
-                    <button onClick={removeQuantity}>
+                    <button onClick={decrementQuantity}>
                       <IoRemoveOutline />
                     </button>
                     <span>{quantity}</span>
-                    <button onClick={addQuantity}>
+                    <button onClick={incrementQuantity}>
                       <IoAddOutline />
                     </button>
                   </div>
