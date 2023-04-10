@@ -1,10 +1,17 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import HomeButton from "../HomeButton";
 import Navbar from "../Navbar/Navbar";
 import ProductList from "../Product/ProductList";
 import { FavoritesContext } from "../../contex/FavoritesContext";
 function Wishlist() {
-  const [favorites] = useContext(FavoritesContext);
+  const [favorites, setFavorites] = useContext(FavoritesContext);
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, [setFavorites]);
 
   return (
     <div className="w-screen flex justify-center items-center">

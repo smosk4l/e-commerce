@@ -55,7 +55,7 @@ function Register() {
                   id="password"
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  autoComplete="current-password"
                   required
                   className=""
                 />
@@ -70,10 +70,10 @@ function Register() {
               </label>
               <div className="mt-1">
                 <input
-                  id="password"
+                  id="confirmPassword"
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  autoComplete="current-password"
                   required
                   className=""
                 />

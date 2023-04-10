@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { IoArrowBackOutline } from "react-icons/io5";
 import formSubmitValidation from "../utils/formSubmitValidation";
 
 function Login() {
@@ -56,7 +55,7 @@ function Login() {
                   id="password"
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  autoComplete="current-password"
                   required
                   className=""
                 />

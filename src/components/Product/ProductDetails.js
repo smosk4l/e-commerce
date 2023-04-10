@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FavoritesContext } from "../../contex/FavoritesContext";
 import Navbar from "../Navbar/Navbar";
@@ -20,6 +20,13 @@ function ProductDetails() {
   const [favorites, setFavorites] = useContext(FavoritesContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const favoritesFromStorage = JSON.parse(localStorage.getItem("favorites"));
+    if (favoritesFromStorage) {
+      setFavorites(favoritesFromStorage);
+    }
+  }, [setFavorites]);
+  console.log(localStorage.favorites);
   const getSelectedProduct = () => {
     return Data.find((product) => product.id.toString() === id);
   };
@@ -36,11 +43,27 @@ function ProductDetails() {
 
   const heartClickHandler = () => {
     setIsFavorite(!isFavorite);
-    if (!isFavorite) {
+
+    const favoritesFromStorage = JSON.parse(localStorage.getItem("favorites"));
+
+    if (
+      !favoritesFromStorage ||
+      !favoritesFromStorage.find((fav) => fav.id === product.id)
+    ) {
       setFavorites((prevFavorites) => [...prevFavorites, product]);
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify([...(favoritesFromStorage || []), product])
+      );
     } else {
       setFavorites((prevFavorites) =>
         prevFavorites.filter((fav) => fav.id !== product.id)
+      );
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify(
+          favoritesFromStorage.filter((fav) => fav.id !== product.id)
+        )
       );
     }
   };
