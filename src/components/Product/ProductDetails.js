@@ -12,12 +12,14 @@ import {
   IoHeartSharp,
   IoArrowBackOutline,
 } from "react-icons/io5";
+import ChooseYourSizePopup from "../../modal/ChooseYourSizePopup";
 
 function ProductDetails() {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
   const [favorites, setFavorites] = useContext(FavoritesContext);
+  const [selectedSize, setSelectedSize] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -108,6 +110,7 @@ function ProductDetails() {
                   <select
                     name="size"
                     id="size"
+                    onChange={(e) => setSelectedSize(e.target.value)}
                     className="px-2 py-2 border-2 rounded-full active:border-red-500"
                   >
                     <option value="" defaultChecked>
@@ -146,7 +149,8 @@ function ProductDetails() {
                   ${product.price * quantity}
                 </span>
               </div>
-              <AddToCartPopup />
+
+              {selectedSize ? <AddToCartPopup /> : <ChooseYourSizePopup />}
             </div>
           </div>
         </article>
