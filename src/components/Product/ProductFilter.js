@@ -1,40 +1,41 @@
 import { useState } from "react";
 import { IoFunnelOutline, IoCloseOutline } from "react-icons/io5";
-
+import sortProductsByPrice from "../../utils/sortProductsByPrice";
+import filterProductsByColor from "../../utils/filterProductsByColor";
 import Data from "./ProductsData";
 
-const sortProductsByPrice = (products, order) => {
-  let sortedProducts = [...products];
-  if (order === "asc") {
-    sortedProducts.sort((a, b) => a.price - b.price);
-  } else if (order === "desc") {
-    sortedProducts.sort((a, b) => b.price - a.price);
-  } else {
-    sortedProducts = Data;
-  }
-
-  return sortedProducts;
-};
-
 function ProductFilter(props) {
-  const [products, setProducts] = useState(Data);
   const [clicked, setClicked] = useState(false);
   const [sortOrder, setSortOrder] = useState("recent");
+  const [selectedColor, setSelectedColor] = useState("");
 
   const toggleFilterMenu = () => {
     setClicked(!clicked);
   };
 
   const handleSortClick = (order) => {
-    const sortedProducts = sortProductsByPrice(products, order);
-    setProducts(sortedProducts);
-    props.onFilter(sortedProducts);
+    const sortedProducts = sortProductsByPrice([...Data], order);
+    const filteredProducts = filterProductsByColor(
+      sortedProducts,
+      selectedColor
+    );
+
+    props.onFilter(filteredProducts);
     setSortOrder(order);
     setClicked(false);
   };
 
   const handleSortOrderChange = (order) => {
     setSortOrder(order);
+  };
+
+  const handleDefaultClick = () => {
+    setSelectedColor("");
+    setSortOrder("recent");
+    setClicked(false);
+    const sortedProducts = sortProductsByPrice([...Data], "recent");
+    const filteredProducts = filterProductsByColor(sortedProducts, "");
+    props.onFilter(filteredProducts);
   };
 
   return (
@@ -110,31 +111,38 @@ function ProductFilter(props) {
                 <button
                   className="w-9 h-9 bg-red-400 rounded-full"
                   aria-label="Red color circle"
+                  onClick={() => setSelectedColor("red")}
                 ></button>
                 <button
                   className="w-9 h-9 bg-white rounded-full border"
                   aria-label="White color circle"
+                  onClick={() => setSelectedColor("white")}
                 ></button>
                 <button
                   className="w-9 h-9 bg-blue-400 rounded-full"
                   aria-label="blue color circle"
+                  onClick={() => setSelectedColor("blue")}
                 ></button>
                 <button
                   className="w-9 h-9 bg-black rounded-full"
                   aria-label="black color circle"
+                  onClick={() => setSelectedColor("black")}
                 ></button>
               </div>
             </div>
 
-            <div className="pb-2 border-b">
-              <p className="font-medium mb-3">Price</p>
-            </div>
-            <div className="flex justify-center">
+            <div className="flex gap-2  items-center justify-center">
               <button
-                className="px-12 py-4  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600"
+                className="px-12 py-2  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600 hover:bg-indigo-500"
                 onClick={() => handleSortClick(sortOrder)}
               >
-                Sort products
+                Sort
+              </button>
+              <button
+                className="px-12 py-2  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-slate-900 hover:bg-slate-800"
+                onClick={handleDefaultClick}
+              >
+                Default
               </button>
             </div>
           </div>

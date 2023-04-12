@@ -13,6 +13,7 @@ const Data = [
     },
     price: 257,
     discount: 0,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -23,6 +24,7 @@ const Data = [
     },
     price: 150,
     discount: 10,
+    color: "black",
   },
   {
     id: getUniqueID(),
@@ -33,6 +35,7 @@ const Data = [
     },
     price: 141,
     discount: 0,
+    color: "black",
   },
   {
     id: getUniqueID(),
@@ -43,6 +46,7 @@ const Data = [
     },
     price: 157,
     discount: 0,
+    color: "white",
   },
 
   {
@@ -54,6 +58,7 @@ const Data = [
     },
     price: 120,
     discount: 15,
+    color: "black",
   },
   {
     id: getUniqueID(),
@@ -64,6 +69,7 @@ const Data = [
     },
     price: 270,
     discount: 0,
+    color: "blue",
   },
   {
     id: getUniqueID(),
@@ -74,6 +80,7 @@ const Data = [
     },
     price: 1003,
     discount: 0,
+    color: "black",
   },
   {
     id: getUniqueID(),
@@ -84,6 +91,7 @@ const Data = [
     },
     price: 58,
     discount: 0,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -94,6 +102,7 @@ const Data = [
     },
     price: 316,
     discount: 20,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -104,6 +113,7 @@ const Data = [
     },
     price: 129,
     discount: 0,
+    color: "black",
   },
   {
     id: getUniqueID(),
@@ -114,6 +124,7 @@ const Data = [
     },
     price: 124,
     discount: 0,
+    color: "blue",
   },
   {
     id: getUniqueID(),
@@ -124,6 +135,7 @@ const Data = [
     },
     price: 137,
     discount: 40,
+    color: "red",
   },
   {
     id: getUniqueID(),
@@ -134,6 +146,7 @@ const Data = [
     },
     price: 124,
     discount: 0,
+    color: "red",
   },
   {
     id: getUniqueID(),
@@ -144,6 +157,7 @@ const Data = [
     },
     price: 153,
     discount: 0,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -154,6 +168,7 @@ const Data = [
     },
     price: 154,
     discount: 5,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -164,6 +179,7 @@ const Data = [
     },
     price: 282,
     discount: 0,
+    color: "white",
   },
   {
     id: getUniqueID(),
@@ -174,6 +190,7 @@ const Data = [
     },
     price: 219,
     discount: 15,
+    color: "white",
   },
 ];
 export default Data;
