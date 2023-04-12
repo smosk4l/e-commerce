@@ -1,10 +1,10 @@
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { Route, Routes } from "react-router-dom";
-import Error from "./components/Error";
+import Error from "./components/Error/Error";
 import Layout from "./components/Layout/Layout";
 import Wishlist from "./components/Wishlist/Wishlist";
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 import ProductDetails from "./components/Product/ProductDetails";
 function App() {
   return (

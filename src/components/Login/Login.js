@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import formSubmitValidation from "../utils/formSubmitValidation";
-import Navbar from "./Navbar/Navbar";
+import formSubmitValidation from "../../utils/formSubmitValidation";
+import Navbar from "../Navbar/Navbar";
 
 function Login() {
   return (

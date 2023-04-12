@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import formSubmitValidation from "../utils/formSubmitValidation";
-import Navbar from "./Navbar/Navbar";
+import formSubmitValidation from "../../utils/formSubmitValidation";
+import Navbar from "../Navbar/Navbar";
 function Register() {
   return (
     <div className="w-screen flex justify-center pb-12 px-6 lg:px-8 ">

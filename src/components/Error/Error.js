@@ -1,9 +1,9 @@
-import HomeButton from "./HomeButton";
+import HomeButton from "../HomeButton";
 function Error() {
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center gap-3  font-rubik text-center px-4 md:justify-start">
       <img
-        src={require("../assets/404-image.jpg")}
+        src={require("../../assets/404-image.jpg")}
         alt="Error 404 ilustration"
         className="sm:max-w-[500px] sm:max-h-[500px]"
       />
