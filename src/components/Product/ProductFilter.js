@@ -19,9 +19,9 @@ const sortProductsByPrice = (products, order) => {
 function ProductFilter(props) {
   const [products, setProducts] = useState(Data);
   const [clicked, setClicked] = useState(false);
-  const [sortBy, setSortBy] = useState("recent");
+  const [sortOrder, setSortOrder] = useState("recent");
 
-  const handleFilterClick = () => {
+  const toggleFilterMenu = () => {
     setClicked(!clicked);
   };
 
@@ -29,8 +29,12 @@ function ProductFilter(props) {
     const sortedProducts = sortProductsByPrice(products, order);
     setProducts(sortedProducts);
     props.onFilter(sortedProducts);
-    setSortBy(order);
+    setSortOrder(order);
     setClicked(false);
+  };
+
+  const handleSortOrderChange = (order) => {
+    setSortOrder(order);
   };
 
   return (
@@ -38,7 +42,7 @@ function ProductFilter(props) {
       <div className="px-6 py-4 flex flex-col items-start ">
         <p className="text-gray-600 mb-3 ">All Products</p>
         <button
-          onClick={handleFilterClick}
+          onClick={toggleFilterMenu}
           className="flex gap-2 items-center border-2  px-2 py-1 border-black"
           aria-label="Show filters panel"
         >
@@ -56,7 +60,7 @@ function ProductFilter(props) {
         >
           <div className="flex items-center justify-between mb-4 py-3">
             <span className="text-xl font-medium">Filters</span>
-            <button onClick={handleFilterClick} aria-label="Close filter panel">
+            <button onClick={toggleFilterMenu} aria-label="Close filter panel">
               <IoCloseOutline className="text-3xl" />
             </button>
           </div>
@@ -73,7 +77,7 @@ function ProductFilter(props) {
                     value="default"
                     name="filterOption"
                     defaultChecked
-                    onClick={() => handleSortClick("recent")}
+                    onClick={() => handleSortOrderChange("recent")}
                   />
                   <label htmlFor="default">Most Recent</label>
                 </div>
@@ -83,7 +87,7 @@ function ProductFilter(props) {
                     id="priceDesc"
                     value="priceDesc"
                     name="filterOption"
-                    onClick={() => handleSortClick("asc")}
+                    onClick={() => handleSortOrderChange("asc")}
                   />
                   <label htmlFor="priceDesc">Price High</label>
                 </div>
@@ -93,7 +97,7 @@ function ProductFilter(props) {
                     id="priceAsc"
                     value="priceAsc"
                     name="filterOption"
-                    onClick={() => handleSortClick("desc")}
+                    onClick={() => handleSortOrderChange("desc")}
                   />
                   <label htmlFor="priceAsc">Price Low</label>
                 </div>
@@ -124,6 +128,14 @@ function ProductFilter(props) {
 
             <div className="pb-2 border-b">
               <p className="font-medium mb-3">Price</p>
+            </div>
+            <div className="flex justify-center">
+              <button
+                className="px-12 py-4  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600"
+                onClick={() => handleSortClick(sortOrder)}
+              >
+                Sort products
+              </button>
             </div>
           </div>
         </div>
