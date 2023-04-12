@@ -1,27 +1,36 @@
-import Data from "./ProductsData";
 import { useState } from "react";
 import { IoFunnelOutline, IoCloseOutline } from "react-icons/io5";
+
+import Data from "./ProductsData";
+
+const sortProductsByPrice = (products, order) => {
+  let sortedProducts = [...products];
+  if (order === "asc") {
+    sortedProducts.sort((a, b) => a.price - b.price);
+  } else if (order === "desc") {
+    sortedProducts.sort((a, b) => b.price - a.price);
+  } else {
+    sortedProducts = Data;
+  }
+
+  return sortedProducts;
+};
 
 function ProductFilter(props) {
   const [products, setProducts] = useState(Data);
   const [clicked, setClicked] = useState(false);
-
-  const handleSortClick = (order) => {
-    let sortedProducts = [...products];
-    if (order === "asc") {
-      sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (order === "desc") {
-      sortedProducts.sort((a, b) => b.price - a.price);
-    } else {
-      sortedProducts = Data;
-    }
-
-    setProducts(sortedProducts);
-    props.onFilter(sortedProducts);
-  };
+  const [sortBy, setSortBy] = useState("recent");
 
   const handleFilterClick = () => {
     setClicked(!clicked);
+  };
+
+  const handleSortClick = (order) => {
+    const sortedProducts = sortProductsByPrice(products, order);
+    setProducts(sortedProducts);
+    props.onFilter(sortedProducts);
+    setSortBy(order);
+    setClicked(false);
   };
 
   return (
@@ -41,7 +50,7 @@ function ProductFilter(props) {
       </div>
       <div>
         <div
-          className={`px-4 bg-white animation-mobile ease-out duration-300 fixed top-0 h-screen w-screen  z-50  md:animation-desktop sm:w-auto
+          className={`px-4 bg-white animation-mobile ease-out duration-300 fixed top-0 h-screen w-screen  z-50  md:animation-desktop md:w-auto
                 ${clicked ? "translate-x-0   " : "-translate-x-full "}  
               `}
         >

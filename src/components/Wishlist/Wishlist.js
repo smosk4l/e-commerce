@@ -18,7 +18,7 @@ function Wishlist() {
       <div className="max-w-[1440px] ">
         <Navbar />
         {favorites.length !== 0 ? (
-          <div className="md:grid grid-cols-8 mx-auto overflow-hidden">
+          <div className="md:grid grid-cols-8 mx-auto overflow-hidden shadow-md">
             <ProductList products={favorites} />
           </div>
         ) : (

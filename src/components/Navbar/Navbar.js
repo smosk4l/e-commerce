@@ -27,19 +27,19 @@ const Navbar = () => {
             <ul className="flex justify-end gap-6 text-xl">
               <li>
                 <Link to={"/login"} className="flex items-center gap-2">
-                  <IoPerson className="text-2xl" />
+                  <IoPerson className="text-2xl text-indigo-600" />
                   Account
                 </Link>
               </li>
               <li>
                 <Link to={"/wishlist"} className="flex items-center gap-2">
-                  <IoHeart className="text-2xl" />
+                  <IoHeart className="text-2xl text-indigo-600" />
                   Wishlist
                 </Link>
               </li>
               <li>
                 <Link to={"/basket"} className="flex items-center gap-2">
-                  <IoCart className="text-2xl" />
+                  <IoCart className="text-2xl text-indigo-600" />
                   Basket
                 </Link>
               </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="w-screen  relative">
+        <div className="w-screen relative">
           <ul
             className={`text-sm  bg-white
            mobile fixed top-20 h-full  z-50

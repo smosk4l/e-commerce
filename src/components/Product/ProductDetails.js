@@ -146,8 +146,8 @@ function ProductDetails() {
                   ${product.price * quantity}
                 </span>
               </div>
-              <button className="px-12 py-4 bg-black text-white text-sm font-semibold rounded-full flex items-center gap-4">
-                <IoCart className="text-lg" />
+              <button className="px-12 py-4  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600">
+                <IoCart className="text-lg " />
                 Add to Cart
               </button>
             </div>
