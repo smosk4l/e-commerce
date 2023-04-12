@@ -133,13 +133,13 @@ function ProductFilter(props) {
 
             <div className="flex gap-2  items-center justify-center">
               <button
-                className="px-12 py-2  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600 hover:bg-indigo-500"
+                className="px-12 md:px-6  py-2  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600 hover:bg-indigo-500"
                 onClick={() => handleSortClick(sortOrder)}
               >
                 Sort
               </button>
               <button
-                className="px-12 py-2  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-slate-900 hover:bg-slate-800"
+                className="px-12 py-2 md:px-6  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-slate-900 hover:bg-slate-800"
                 onClick={handleDefaultClick}
               >
                 Default
