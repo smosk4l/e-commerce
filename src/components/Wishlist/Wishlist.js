@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import HomeButton from "../HomeButton";
 import Navbar from "../Navbar/Navbar";
 import ProductList from "../Product/ProductList";
-import { FavoritesContext } from "../../contex/FavoritesContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
 function Wishlist() {
   const [favorites, setFavorites] = useContext(FavoritesContext);
 

@@ -1,12 +1,12 @@
 import { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FavoritesContext } from "../../contex/FavoritesContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
 import Navbar from "../Navbar/Navbar";
 import Data from "./ProductsData";
 import ProductGallery from "./ProductGallery";
+import AddToCartPopup from "../../modal/AddToCartPopup";
 import {
   IoHeartOutline,
-  IoCart,
   IoRemoveOutline,
   IoAddOutline,
   IoHeartSharp,
@@ -146,10 +146,7 @@ function ProductDetails() {
                   ${product.price * quantity}
                 </span>
               </div>
-              <button className="px-12 py-4  text-white text-sm font-semibold rounded-full flex items-center gap-4 bg-indigo-600">
-                <IoCart className="text-lg " />
-                Add to Cart
-              </button>
+              <AddToCartPopup />
             </div>
           </div>
         </article>

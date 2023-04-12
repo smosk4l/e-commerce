@@ -1,4 +1,4 @@
-import { FavoritesProvider } from "./contex/FavoritesContext";
+import { FavoritesProvider } from "./context/FavoritesContext";
 import { Route, Routes } from "react-router-dom";
 import Error from "./components/Error";
 import Layout from "./components/Layout/Layout";
